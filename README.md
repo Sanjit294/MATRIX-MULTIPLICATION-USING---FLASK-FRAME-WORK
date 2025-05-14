@@ -1,44 +1,70 @@
-# Matrix Multiplication Using Flask Framework
+# Host Database on Cloud Using Clever Cloud
 
 ## Aim
 
-To create a matrix multiplication web application using the **Flask framework** in Python.
+To demonstrate how to host a database on the cloud using *Clever Cloud*.
 
-## Matrix Multiplication
+## Clever Cloud
 
-Matrix multiplication, also known as the matrix product, involves multiplying two matrices to produce a single matrix. If \( A \) and \( B \) are two matrices, their product is denoted by \( X = AB \).
-
-## Flask Framework
-
-Flask is a micro web framework written in Python. It is considered a microframework because it does not include tools or libraries for database abstraction, form validation, or other components, relying instead on third-party libraries.
+Clever Cloud is a Platform as a Service (PaaS) designed to help businesses deploy web services in the cloud quickly and efficiently. It offers a pay-as-you-go pricing model, eliminating the need for infrastructure management, system updates, and troubleshooting.
 
 ## Algorithm
 
-1. **Setup Flask Application**:
-   - Delete any existing `flask_app.py` file in the project directory.
-   - Rename your main Python file to `flask_app.py` to match the expected filename for Flask applications.
-   - Upload `flask_app.py` to the server.
-   - If you have additional HTML, CSS, or other files, create `templates` and `static` directories and upload these files.
-   - Go to the Web menu page and click on the Reload button to apply changes.
+1. *Create a New Application*: Start by creating a new application on Clever Cloud.
+2. *Deploy Your Application*: Deploy your application to the cloud platform.
+3. *Check Deployment*: Verify that your application has been successfully deployed.
+4. *Configure Your Application*: Set up your application’s configuration settings.
+5. *Connect to a Database*: Establish a connection to a database hosted on Clever Cloud.
 
-2. **Python Code (`flask_app.py`)**:
-   ```python
-   Your Code is Here
-   ```
+## Implementation
 
-3. **HTML Files**:
+The following Python code demonstrates how to connect to a MySQL database, perform basic database operations, and interact with the database using mysql-connector-python.
 
-   - **`mainfile.html`**:
-     ```html
-     Your Code is Here
-     ```
 
-   - **`home.html`**:
-     ```html
-     Your Code is Here
-     ```
+import mysql.connector 
+mydb=mysql.connector.connect(host=#h 
+ost,database=#database, 
+user=#user, 
+password=#password 
+) 
+mycursor= mydb.cursor() 
+ 
+mycursor.execute("CREATE TABLE test2(name VARCHAR(255),age int)") 
+sql ="INSERT INTO test2 (name,age) VALUES (%s,%s)" 
+val=("test1","1") 
+mycursor.execute(sql,val) 
+mybd.commit()
+sql="UPDATE test2 SET name = 'test4' WHERE name = 'test1'" 
+ 
+ 
+mycursor.execute(sql) 
+ 
+ 
+mydb.commit() 
+ 
+ 
+mycursor.execute("SELECT *FROM test2") 
+ 
+ 
+myresult= mycursor.fetchall() 
+ 
+ 
+for x in 
+myresult: 
+print(x) 
+ 
+ 
+sql="DELETE FROM test2 WHERE name='test4'" 
+mycursor.execute(sql) 
+mycursor.commit()
+
+
+
+
 ## Output
+
+![image](https://github.com/user-attachments/assets/5e1ac30d-52a1-461b-8e21-557f63bba4fc)
+
 ## Result
 
-
-
+The implementation of hosting a database on Clever Cloud was successfully created and executed, demonstrating how to manage a cloud-hosted database using basic SQL operations.
